@@ -4,9 +4,7 @@
 2025-06-01 09:12:45	ERROR	OrderService	Order ID 7789 failed due to timeout.
 2025-05-10 18:30:00	CRITICAL	SystemMonitor	Disk usage exceeded critical threshold.
 
-2025-05-07 10:00:00	INFO	UserAuth
 2025-05-07 10:00:00	INFO	UserAuth	Message	ExtraField
-2025-05-07 10:00:00	INFO		User logged in
      
 2025-05-07 10:00:00	INFO	UserAuth	<very long message exceeding allowed size....................................................................................................................>
 
@@ -21,10 +19,8 @@
 2025-05-07 10:00:00	INFO	User__Auth	Double underscore not allowed
 
 2025-05-07 10:00:00	INFO	UserAuth	
-2025-05-07 10:00:00	INFO	UserAuth	    
 2025-05-07 10:00:00	INFO	UserAuth	@@@@@@@@@@@@@
 2025-05-07 10:00:00	INFO	UserAuth	User logged in
-Injected log line
 2025-05-07 10:00:00	INFO	UserAuth	User logged in\rCRLF attack
 2025-05-07 10:00:00	INFO	UserAuth	Message		with		many		tabs
 
