@@ -9,7 +9,7 @@
  ***
 # Endpoints-
 * ```/logs```- Returns all parsed log entries in JSON format. Supports optional filtering by log level, component, and timestamp range.
-     * Query Parameters (optional):
+     Query Parameters (optional):
     * level – Filter logs by level (e.g., ?level=ERROR)
      * component – Filter logs by component (e.g., ?component=UserAuth)
      * start_time – Filter logs after this timestamp (YYYY-MM-DD HH:MM:SS)
@@ -19,6 +19,17 @@
     * Counts of log entries per level.
     * Counts of log entries per component.
 * ```/logs/<string:log_id>```-  Returns a specific log entry based on a unique log_id. 
+*  ```/logs/pagination```- Returns a paginated subset of log entries in JSON format. Reuses the same filtering logic as the /logs endpoint but returns data wrapped in a metadata object.
+     Query Parameters (optional):
+    * page_number – The page to retrieve (Default: 1).
+     * page_size – Number of logs per page (Default: 5).
+
+    Query Parameters (optional):
+    level, component, start_time, end_time – Same filters as the /logs endpoint.
+
+
+
+
  ***
 # Setup and run
 
