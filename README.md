@@ -1,4 +1,4 @@
-# Assumeptions
+# Assumption
 * ```\t``` is a literal tab separating fields, log files are UTF-8 encoded, each line represents a single log entry, timestamps are in local time unless specified, and missing or extra fields indicate a malformed line.
 * Missing or extra fields indicate a malformed line.
 * No restrictions on component type; it can contain any characters.
