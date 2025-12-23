@@ -40,7 +40,7 @@ def load_logs():
                     log_id += 1
                 except ValueError as e:
                     # Skip invalid log entries (or log this somewhere)
-                    print(f"Skipping invalid log line: {e}")
+                    print(f"Skipping invalid log line: {e}") 
                 log_id += 1
 
 
