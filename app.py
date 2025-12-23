@@ -5,13 +5,12 @@ Provides endpoints to:
 - List and filter logs (/logs)
 - View individual log by ID (/logs/<id>)
 - Get basic statistics (/logs/stats)
+- List with pagination (/logs/pagination)
 
-Loads logs from files in the 'logs/' directory on startup, parses them using LogParser,
-and stores them in memory for fast querying.
 
-Author: [Your Name]  
-Created: 2025-07-10  
-Last Updated: 2025-07-10  
+Author: Nagdatt Gajjam
+Created: 2025-12-23 
+Last Updated: 2025-12-23 
 """
 
 from log_parser import LogParser
