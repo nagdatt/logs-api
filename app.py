@@ -124,6 +124,57 @@ def get_log_by_id(log_id):
     abort(404, "Log ID not found")
 
 
+@app.route("/logs/pagination", methods=["GET"])
+def logs_with_pagination():
+    result = logs
+
+    level = request.args.get("level")
+    component = request.args.get("component")
+    start_time = request.args.get("start_time")
+    end_time = request.args.get("end_time")
+
+    if level:
+        result = [log for log in result if log["level"] == level]
+    if component:
+        result = [log for log in result if log["component"] == component]
+    if start_time:
+        try:
+            start_dt = parse_time(start_time)
+            result = [log for log in result if parse_time(log["timestamp"]) >= start_dt]
+        except ValueError:
+            abort(400, "Invalid start_time format")
+    if end_time:
+        try:
+            end_dt = parse_time(end_time)
+            result = [log for log in result if parse_time(log["timestamp"]) <= end_dt]
+        except ValueError:
+            abort(400, "Invalid end_time format")
+
+    try:
+        # Default to page 1 and size 10 if not provided
+        page_number = int(request.args.get("page_number", 1))
+        page_size = int(request.args.get("page_size", 5))
+    except ValueError:
+        abort(400, "page_number and page_size must be integers")
+
+    if page_number < 1 or page_size < 1:
+        abort(400, "page_number and page_size must be positive integers")
+
+    # Calculate start and end indices
+    start_index = (page_number - 1) * page_size
+    end_index = start_index + page_size
+    
+    paginated_results = result[start_index:end_index]
+
+    return jsonify({
+        "page": page_number,
+        "page_size": page_size,
+        "total_results": len(result),
+        "total_pages": (len(result) + page_size - 1) // page_size,
+        "data": paginated_results
+    })
+
+
 @app.errorhandler(400)
 def bad_request(e):
     return jsonify(error=str(e)), 400
@@ -132,6 +183,7 @@ def bad_request(e):
 @app.errorhandler(404)
 def not_found(e):
     return jsonify(error=str(e)), 404
+
 
 
 if __name__ == "__main__":
