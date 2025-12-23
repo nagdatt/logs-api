@@ -1,0 +1,11 @@
+2025-07-01 11:11:11	INFO	CacheManager	Cache warmed successfully.
+2025-07-01 11:12:12	DEBUG	ApiGateway	Request routed to backend service.
+2025-07-01 11:13:13	WARNING	RateLimiter	Client exceeded request limit.
+2025-07-01 11:14:14	ERROR	DatabasePool	Connection pool exhausted.
+2025-07-01 11:15:15	CRITICAL	SecurityManager	Possible intrusion detected.
+
+2025-08-01 08:00:00	INFO	UserService	User profile updated.
+2025-08-01 08:01:00	DEBUG	SessionManager	Session refreshed successfully.
+2025-08-01 08:02:00	WARNING	NotificationService	Email service latency detected.
+2025-08-01 08:03:00	ERROR	FileUploader	File upload failed due to size limit.
+2025-08-01 08:04:00	CRITICAL	BackupService	Backup job failed unexpectedly.

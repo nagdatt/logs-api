@@ -81,7 +81,7 @@ def get_logs():
                 if parse_time(log["timestamp"]) <= end_dt
             ]
         except ValueError:
-            abort(400, "Invalid end_time format")
+            abort(400, "Invalid end_time format")  
 
     return jsonify(result)
 

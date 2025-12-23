@@ -1,0 +1,30 @@
+2025-05-07 10:00:00	INFO	UserAuth	User 'john.doe' logged in successfully.
+2024-11-15 22:45:10	DEBUG	PaymentService	Transaction ID 12345 processed successfully.
+2023-01-01 00:00:01	WARNING	ConfigLoader	Missing optional config file, using defaults.
+2025-06-01 09:12:45	ERROR	OrderService	Order ID 7789 failed due to timeout.
+2025-05-10 18:30:00	CRITICAL	SystemMonitor	Disk usage exceeded critical threshold.
+
+2025-05-07 10:00:00	INFO	UserAuth
+2025-05-07 10:00:00	INFO	UserAuth	Message	ExtraField
+2025-05-07 10:00:00	INFO		User logged in
+     
+2025-05-07 10:00:00	INFO	UserAuth	<very long message exceeding allowed size....................................................................................................................>
+
+07-05-2025 10:00:00	INFO	UserAuth	Invalid timestamp format
+2025-02-30 10:00:00	INFO	UserAuth	Invalid calendar date
+2099-01-01 00:00:00	INFO	UserAuth	Future timestamp error
+1990-01-01 10:00:00	INFO	UserAuth	Too old timestamp
+
+2025-05-07 10:00:00	INFO		Message with empty component
+2025-05-07 10:00:00	INFO	User-Auth	Hyphen not allowed
+2025-05-07 10:00:00	INFO	1UserAuth	Component starts with digit
+2025-05-07 10:00:00	INFO	User__Auth	Double underscore not allowed
+
+2025-05-07 10:00:00	INFO	UserAuth	
+2025-05-07 10:00:00	INFO	UserAuth	    
+2025-05-07 10:00:00	INFO	UserAuth	@@@@@@@@@@@@@
+2025-05-07 10:00:00	INFO	UserAuth	User logged in
+Injected log line
+2025-05-07 10:00:00	INFO	UserAuth	User logged in\rCRLF attack
+2025-05-07 10:00:00	INFO	UserAuth	Message		with		many		tabs
+
