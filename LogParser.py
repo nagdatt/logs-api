@@ -31,7 +31,7 @@ class LogParser:
     # Validates timestamp format.
     def validate_timestamp(self, timestamp: str) -> datetime:
 
-        # Existing validation (kept as-is)
+        
         try:
             parsed_time = datetime.strptime(timestamp, self.TIMESTAMP_FORMAT)
         except ValueError:
