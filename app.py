@@ -15,6 +15,7 @@ Last Updated: 2025-07-10
 """
 
 from log_parser import LogParser
+import uuid
 file_path='./logs/sample.log'
 parser = LogParser()
 
@@ -32,7 +33,6 @@ logs = []
 def load_logs():
     
     global logs
-    log_id = 1
 
     for file_name in os.listdir(LOG_DIR):
         file_path = os.path.join(LOG_DIR, file_name)
@@ -45,17 +45,15 @@ def load_logs():
                 try:
                     parsed = parser.parse_line(line)
                     logs.append({
-                        "id": log_id,
+                        "id": str(uuid.uuid4()),
                         "timestamp": parsed["timestamp"],
                         "level": parsed["level"],
                         "component": parsed["component"],
                         "message": parsed["message"]
                     })
-                    log_id += 1
                 except ValueError as e:
                     # Skip invalid log entries 
                     print(f"Skipping invalid log line: {e}")
-                log_id += 1
 
 
 def parse_time(time_str):
@@ -117,7 +115,7 @@ def get_stats():
     })
 
 
-@app.route("/logs/<int:log_id>", methods=["GET"])
+@app.route("/logs/<string:log_id>", methods=["GET"])
 def get_log_by_id(log_id):
     for log in logs:
         if log["id"] == log_id:
