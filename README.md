@@ -9,6 +9,7 @@
  ***
 # Endpoints-
 * ```/logs```- Returns all parsed log entries in JSON format. Supports optional filtering by log level, component, and timestamp range.
+
      Query Parameters (optional):
     * level – Filter logs by level (e.g., ?level=ERROR)
      * component – Filter logs by component (e.g., ?component=UserAuth)
