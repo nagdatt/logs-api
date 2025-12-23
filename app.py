@@ -1,7 +1,7 @@
 """
 Flask-based log viewer API.
 
-Provides endpoints to:
+Endpoints:
 - List and filter logs (/logs)
 - View individual log by ID (/logs/<id>)
 - Get basic statistics (/logs/stats)
@@ -10,7 +10,6 @@ Provides endpoints to:
 
 Author: Nagdatt Gajjam
 Created: 2025-12-23 
-Last Updated: 2025-12-23 
 """
 
 from log_parser import LogParser
