@@ -1,5 +1,16 @@
+"""
+Unit tests for LogParser class.
+
+Tests cover valid parsing, field validation, timestamp rules, message content,
+and security checks against injection attacks.
+
+Author: Nagdatt Gajjam
+Email: nagdatt.h.gajjam@gmail.com
+Created: 2025-12-23
+"""
+
 import pytest
-from LogParser import LogParser  
+from log_parser import LogParser  
 from datetime import datetime
 
 

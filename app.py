@@ -1,4 +1,4 @@
-from LogParser import LogParser
+from log_parser import LogParser
 file_path='./logs/sample.log'
 parser = LogParser()
 
@@ -12,11 +12,9 @@ app = Flask(__name__)
 LOG_DIR = "logs"
 logs = []
 
-
+#  Reads all log files from LOG_DIR and parses them into memory.
 def load_logs():
-    """
-    Reads all log files from LOG_DIR and parses them into memory.
-    """
+
     global logs
     log_id = 1
 
@@ -39,7 +37,7 @@ def load_logs():
                     })
                     log_id += 1
                 except ValueError as e:
-                    # Skip invalid log entries (or log this somewhere)
+                    # Skip invalid log entries 
                     print(f"Skipping invalid log line: {e}")
                 log_id += 1
 
