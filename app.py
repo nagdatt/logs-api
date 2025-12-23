@@ -1,3 +1,19 @@
+"""
+Flask-based log viewer API.
+
+Provides endpoints to:
+- List and filter logs (/logs)
+- View individual log by ID (/logs/<id>)
+- Get basic statistics (/logs/stats)
+
+Loads logs from files in the 'logs/' directory on startup, parses them using LogParser,
+and stores them in memory for fast querying.
+
+Author: [Your Name]  
+Created: 2025-07-10  
+Last Updated: 2025-07-10  
+"""
+
 from log_parser import LogParser
 file_path='./logs/sample.log'
 parser = LogParser()
@@ -14,7 +30,7 @@ logs = []
 
 #  Reads all log files from LOG_DIR and parses them into memory.
 def load_logs():
-
+    
     global logs
     log_id = 1
 
