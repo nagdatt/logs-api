@@ -133,7 +133,7 @@ class LogParser:
         # Validation 1
         self.validate_field_count(parts)
 
-        timestamp, level, component, message = parts
+        timestamp, level, component, message = parts 
 
         # Validation 2
         parsed_timestamp = self.validate_timestamp(timestamp)
