@@ -21,6 +21,7 @@
     * Counts of log entries per component.
 * ```/logs/<string:log_id>```-  Returns a specific log entry based on a unique log_id. 
 *  ```/logs/pagination```- Returns a paginated subset of log entries in JSON format. Reuses the same filtering logic as the /logs endpoint but returns data wrapped in a metadata object.
+
      Query Parameters (optional):
     * page_number – The page to retrieve (Default: 1).
      * page_size – Number of logs per page (Default: 5).
