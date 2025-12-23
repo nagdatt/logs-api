@@ -14,13 +14,11 @@ Created: 2025-12-23
 
 from log_parser import LogParser
 import uuid
-file_path='./logs/sample.log'
-parser = LogParser()
-
-
 from flask import Flask, jsonify, request, abort
 from datetime import datetime
 import os
+
+parser = LogParser()
 
 app = Flask(__name__)
 
@@ -60,6 +58,7 @@ def parse_time(time_str):
 
 @app.route("/logs", methods=["GET"])
 def get_logs():
+    load_logs()
     result = logs
 
     level = request.args.get("level")
@@ -185,5 +184,5 @@ def not_found(e):
 
 
 if __name__ == "__main__":
-    load_logs()
+    
     app.run(debug=True)
